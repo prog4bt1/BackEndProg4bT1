@@ -1,32 +1,32 @@
 import * as mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
-export interface ITipoCajon extends mongoose.Document {  
+export interface ITipoVehiculo extends mongoose.Document {  
     tipocajon: string;
-    Tarifa: Number;
+    tarifa: Number;
     altura:Number;
 }
 
- const TipoCajonSchema = new Schema(
+ const TipoVehiculoSchema = new Schema(
     {
-        tipocajon: {
+        tipoVehiculo: {
             type: String,
-            required: [true, 'tipocajon required'],
+            required: [true, 'tipoVehiculo required'],
             unique: true
         },
-        Tarifa: {
+        tarifa: {
             type: Number,
             required: [true, 'tarifa required'],
             unique: true
         },
         altura: {
             type: Number,
-            required: [true, 'tipocajon required'],
+            required: [true, 'tipoVehiculo required'],
             unique: true
         }
     }
     
  );
 
-const TipoCajon = mongoose.model<ITipoCajon>("TipoCajon", TipoCajonSchema);
-export default TipoCajon;
+const TipoVehiculo = mongoose.model<ITipoVehiculo>("TipoVehiculo", TipoVehiculoSchema);
+export default TipoVehiculo;
